@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+   <style>
+    body{
+        background-color: #0093E9;
+        background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+        height: 100vh;
+    }
+    .heading{
+        text-align: center;
+    }
+    .bulb-container{
+        background-color: #fff;
+        width: 400px;
+        margin: 10px auto;
+        display:flex;
+        justify-content: center;
+        padding: 20px;
+        border-radius: 20px;
+    }
+    .bulb-img{
+        height: 250px;
+    }
+    .btn-container{
+        display: flex;
+        justify-content: center;
+    }
+    .btn{
+        width: 90px;
+        padding: 5px 20px;
+        border-radius: 50px;
+        border: none;
+        margin:  0 10px;
+        cursor: pointer;
+    }
+    .btn-on{
+        background-color: palevioletred;
+    }
+    .btn-off{
+        background-color: yellow;
+    }
+    @media screen and(max-width: 760px){
+     .bulb-container{
+        width:80% ;
+     }
+     .bulb-img{
+        height: 150px;
+     }
+    }
+   </style>
+<body>
+    <h1 class="heading">Bulb Toggler</h1>
+
+    <div class="bulb-container">
+        <img src="bulb-off.png" class="bulb-img"  id="bulb"/>
+    </div>
+    <div class="btn-container">
+        <button class="btn btn-on" onclick="toggleBulb('on')">
+            On
+        </button>
+        <button class="btn btn-off" onclick="toggleBulb('off')">
+            Off
+        </button>
+    </div>
+    <script>
+        function toggleBulb(state) {
+            const bulbElement = document.getElementById('bulb');
+            bulbElement.src='./img/bulb-on.png';
+            if(state=='on'){
+                bulbElement.src = './img/bulb-on.png';
+            }
+            else{
+                bulbElement.src = './img/bulb-off.png';
+            }
+        }
+    </script>
+  </body>
+</html>    
